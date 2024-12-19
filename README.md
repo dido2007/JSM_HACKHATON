@@ -39,6 +39,7 @@ Press CTRL + Left Click on [http://localhost:3000/]
 ## 💫 STEP 3. ENJOY 💫 ##
 
 
+To start, click on GET STARTED
 Play around with different features and just like me start to Savin'IT😉
 
 
