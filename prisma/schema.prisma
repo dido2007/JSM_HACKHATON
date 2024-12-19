@@ -1,0 +1,159 @@
+// Prisma Schema Configuration
+// Defines the data model and datasource configurations for the application's database using Prisma ORM.
+// It includes database connection settings, Prisma client generation configurations, and the database schema models.
+// -------------------------------------------------------------------------------------------------
+// Documnetation
+// - https://authjs.dev/getting-started/adapters/prisma
+// - https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-typescript-postgresql
+// -------------------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------------------
+// DataSource Configuration
+// -------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------
+// The `db` datasource specifies the database connection settings for Prisma, utilising PostgreSQL.
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+// -------------------------------------------------------------------------------------------------
+// Prisma Client Generator
+// -------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------
+// Configures the Prisma client, specifying the provider for client generation.
+generator client {
+  provider = "prisma-client-js"
+}
+
+// -------------------------------------------------------------------------------------------------
+// Models
+// -------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------
+// User Model: Represents a user with its credentials, including personal information and financial
+// data.
+model User {
+  id                    String                 @id @default(cuid())
+  name                  String?
+  email                 String?                @unique
+  emailVerified         DateTime?
+  image                 String?
+  password              String?
+  isTwoFactorEnabled    Boolean                @default(false)
+  twoFactorConfirmation TwoFactorConfirmation?
+  expenses              Expenses[]
+  budgets               Budget[]
+  finances              Finances[]
+  bills                 Bills[]
+}
+
+// -------------------------------------------------------------------------------------------------
+// VerificationToken Model: Manages email verification tokens.
+model VerificationToken {
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+}
+
+// -------------------------------------------------------------------------------------------------
+// PasswordResetToken Model: Manages tokens for password reset operations.
+model PasswordResetToken {
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+}
+
+// -------------------------------------------------------------------------------------------------
+// TwoFactorToken Model: Manages two-factor authentication tokens.
+model TwoFactorToken {
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+}
+
+// -------------------------------------------------------------------------------------------------
+// TwoFactorConfirmation Model: Confirms two-factor authentication setup.
+model TwoFactorConfirmation {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId])
+}
+
+// -------------------------------------------------------------------------------------------------
+// Article Model: To store the Learnin'IT articles.
+model Article {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  publishedAt DateTime
+  author      String
+  category    String
+  linkTo      String
+}
+
+// -------------------------------------------------------------------------------------------------
+// Expenses Model: To store the Expenses entred by the user.
+model Expenses {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  title       String
+  amount      Float // Decimal doesn't exist in TS.
+  date        DateTime
+  category    String
+  description String
+}
+
+// -------------------------------------------------------------------------------------------------
+// Bills Model: To store the bills entred by the user.
+model Bills {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  title       String
+  amount      Float // Decimal doesn't exist in TS.
+  date        DateTime
+  endDate     DateTime
+  category    String
+  description String
+  frequency   String
+}
+
+// -------------------------------------------------------------------------------------------------
+// Budget Model: To store the Budgets created by the user.
+model Budget {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  title     String
+  amount    Float // Decimal doesn't exist in TS.
+  startDate DateTime
+  endDate   DateTime
+  category  String
+}
+
+// -------------------------------------------------------------------------------------------------
+// Finances Model: To store the user's Finances.
+model Finances {
+  id     String   @id @default(cuid())
+  userId String
+  user   User     @relation(fields: [userId], references: [id])
+  date   DateTime
+  income Float
+}
+
+// -------------------------------------------------------------------------------------------------
+// Comments generated with GitHub Copilot.
+// -------------------------------------------------------------------------------------------------
