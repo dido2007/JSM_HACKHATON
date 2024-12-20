@@ -144,4 +144,3 @@ npm run prisma:seed     # Populates the database with articles data – CF. pris
 ```
 
 
-## README.md-V.0.2 – for City Submission, not Public Repo due to .env fields.
