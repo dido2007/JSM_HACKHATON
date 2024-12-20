@@ -11,8 +11,8 @@
 
 2. **Test Account for Quick Access:**
    - Use the following credentials to quickly access the app:
-     - Email: `test@savin.it`
-     - Password: `password123`
+     - Email: `hfourati2007@gmail.com`
+     - Password: `JSMmastery`
 
 3. **Access the Dashboard:**
    - Click on **"GET STARTED"** to begin using the app and explore its features.
