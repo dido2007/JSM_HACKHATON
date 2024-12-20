@@ -14,7 +14,6 @@ import BudgetProgressList from "@/../src/app/(protected)/_components/dashboard/b
 import NextComingBillCard from "@/../src/app/(protected)/_components/dashboard/next-coming-bill-card";
 import BudgetDistributionCard from "@/../src/app/(protected)/_components/dashboard/expense-overview-card";
 import ExpensesEvolutionCard from "@/../src/app/(protected)/_components/dashboard/expenses-evolution-card";
-import LargestBillCategoryCard from "@/../src/app/(protected)/_components/dashboard/largest-bill-category-card";
 import MonthlyLargestExpenseCategory from "@/../src/app/(protected)/_components/dashboard/largest-expense-category-card";
 
 /**
@@ -27,20 +26,19 @@ const DashboardPage = () => {
       <div className="container mx-auto px-4">
         <h1 className="text-2xl font-bold text-left my-6">My Dashboard</h1>
         {/* SMALLER CARDS SECTION */}
-        <div className="flex flex-row justify-between space-x-4 items-stretch mb-4">
+        <div className="flex flex-col lg:flex-row justify-between space-y-4 lg:space-y-0 lg:space-x-4 items-stretch mb-4">
           <div className="flex-1">
             <MonthlyLargestExpenseCategory />
           </div>
           <div className="flex-1">
-            {/* <LargestBillCategoryCard /> */}
-            <NextComingBillCard/>
+            <NextComingBillCard />
           </div>
           <div className="flex-1">
             <NetworthCard />
           </div>
         </div>
         {/* EXPENSES DETAILED SECTION */}
-        <div className="flex flex-row justify-between space-x-4 items-stretch mb-4">
+        <div className="flex flex-col lg:flex-row justify-between space-y-4 lg:space-y-0 lg:space-x-4 items-stretch mb-4">
           <div className="flex-1">
             <BudgetDistributionCard />
           </div>
@@ -49,13 +47,13 @@ const DashboardPage = () => {
           </div>
         </div>
         {/* EXPENSES EVOLUTION LINE CHART */}
-        <div className="flex flex-row justify-between space-x-4 items-stretch mb-4">
+        <div className="flex flex-col lg:flex-row justify-between space-y-4 lg:space-y-0 lg:space-x-4 items-stretch mb-4">
           <div className="flex-1">
             <ExpensesEvolutionCard />
           </div>
         </div>
         {/* BUDGETS SECTION */}
-        <div className="flex flex-row justify-between space-x-4 items-stretch mb-4">
+        <div className="flex flex-col lg:flex-row justify-between space-y-4 lg:space-y-0 lg:space-x-4 items-stretch mb-4">
           <div className="flex-1">
             <BudgetOverviewCard />
           </div>
