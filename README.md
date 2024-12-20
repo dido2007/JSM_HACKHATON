@@ -1,5 +1,67 @@
 # GUIDE ON HOW TO RUN SAVIN'IT #
 
+---
+
+## **🌟 HOW TO USE SAVIN'IT 🌟**
+
+### **Create Your Account**
+1. **Sign up to create your account:**
+   - A two-factor authentication system is enabled.
+   - You will receive an email confirmation to verify your account.
+
+2. **Test Account for Quick Access:**
+   - Use the following credentials to quickly access the app:
+     - Email: `test@savin.it`
+     - Password: `password123`
+
+3. **Access the Dashboard:**
+   - Click on **"GET STARTED"** to begin using the app and explore its features.
+
+---
+
+## **🎨 FEATURES EXPLAINED 🎨**
+
+### **Dashboard**
+- View an overview of your finances:
+  - **Largest expense this month.**
+  - **Upcoming bills.**
+  - **Current bank account balance.**
+  - **Recent expenses.**
+  - **Spending evaluation.**
+  - **Monthly budget overview.**
+
+### **Budget Management**
+- **Create a budget:**
+  - Define a budget by category and date range.
+- **View budget history:**
+  - Access all previous budgets for better planning.
+
+### **Expense Tracking**
+- **Add expenses:**
+  - Record expenses with details like amount, date, and description.
+- **View all expenses:**
+  - Access a full history of your transactions.
+
+### **Recurring Bills**
+- **Set up recurring bills:**
+  - Define the frequency (e.g., monthly or weekly).
+  - Specify start and end dates.
+
+### **Income Configuration**
+- **Set up your income:**
+  - Enter your salary and specify how often you receive it (e.g., monthly).
+
+### **Learning Section**
+- Improve your financial knowledge with articles on:
+  - **Savings** (Learn how to save).
+  - **Budgeting** (Learn how to budget).
+  - **Investing** (Learn how to invest).
+  - **Debt Management** (Learn how to manage debt).
+
+  **Note:** Each section redirects you to detailed and informative articles.
+
+---
+
 
 ## 🎛️ STEP 0. PREREQUISITES 🎛️ ##
 
